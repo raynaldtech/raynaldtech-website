@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .grecaptcha-badge { 
+    visibility: hidden !important;
+    opacity: 0 !important;
+} */
+
+.toast-success {
+    @apply bg-primary text-white;
+  }
+  
+  .toast-error {
+    @apply bg-secondary text-white;
+}
+
+@layer base {
+    :root {
+        --color-primary: 19 119 95;
+        --color-secondary: 215 0 0;
+        --color-neutral: 244 244 244;
+    }
+
+    .dark {
+        --color-neutral: 23 23 23;
+        background-color: theme('colors.neutral.900');
+        color: theme('colors.neutral.100');
+    }
+}
+
+@layer components {
+    .transition-colors {
+        transition-property: color, background-color, border-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+    }
+
+    .transition-all {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+    }
+}
