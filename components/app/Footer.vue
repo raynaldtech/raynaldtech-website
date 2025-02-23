@@ -90,6 +90,10 @@
           <NuxtLink to="/terms" class="hover:text-neutral-400">
             Terms of Service
           </NuxtLink>
+          <span class="mx-2">•</span>
+          <NuxtLink to="/accessibility" class="hover:text-neutral-400">
+            Accessibility Statement
+          </NuxtLink>
         </p>
       </div>
     </div>
@@ -100,6 +104,7 @@
 import { EnvelopeOpenIcon, PhoneIcon, MapPinIcon, ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/vue/24/outline'
 
 const footerLinks = [
+  { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
   { label: 'Our Team', path: '/about' },
   { label: 'Contact', path: '/contact' },

@@ -35,7 +35,7 @@ export default defineEventHandler(async (event) => {
 
     // Create Nodemailer transporter
     const transporter = createTransport({
-      service: 'Gmail',
+      service: config.mailService,
       host: config.mailHost,
       //port: config.mailPort,
       secure: true,  

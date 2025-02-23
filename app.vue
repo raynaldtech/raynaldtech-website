@@ -3,12 +3,19 @@
     <NuxtLayout>
       <CookieConsent />
       <NuxtPage/>
-      <RealTimeChatWidget/>
+      <!-- <RealTimeChatWidget/> -->
     </NuxtLayout>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { RouterConfig } from '@nuxt/schema'
+useSeoMeta({
+  author: 'Raynald Tech ICT Solutions',
+  themeColor: '#13775F',
+  mobileWebAppCapable: 'yes',
+  appleMobileWebAppStatusBarStyle: 'black-translucent'
+})
 onBeforeMount(() => {
   if (typeof localStorage !== 'undefined') {
     const theme = localStorage.getItem('theme')

@@ -218,6 +218,18 @@ const handleSubmit = async () => {
     isLoading.value = false
   }
 }
+
+useSeoMeta({
+  title: 'Contact IT Support Nelspruit | 24/7 Technical Help',
+  description: 'Get instant IT assistance in Nelspruit. Call +27 79 436 4970 or email raynaldtech@gmail.com for urgent tech support.',
+  keywords: 'IT support contact, emergency computer repair, Nelspruit tech help, IT consultation booking',
+  ogTitle: '24/7 IT Support Contact - Raynald Tech',
+  ogDescription: 'Reach our certified technicians day or night for urgent tech solutions',
+  //ogImage: `${config.public.siteUrl}/images/og-contact.jpg`,
+  ogUrl: `${config.public.siteUrl}/contact`,
+  //twitterCard: 'summary_large_image'
+  robots: 'contact, follow'
+})
 </script>
 
 <style>

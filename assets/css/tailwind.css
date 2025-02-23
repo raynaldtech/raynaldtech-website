@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .grecaptcha-badge { 
+.grecaptcha-badge { 
     visibility: hidden !important;
     opacity: 0 !important;
-} */
+} 
+/* Set base font size for scaling */
+html {
+    font-size: 16px;
+  }
+  
+  /* Add smooth transitions */
+  * {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
 
 .toast-success {
     @apply bg-primary text-white;

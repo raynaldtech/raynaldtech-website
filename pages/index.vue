@@ -19,14 +19,12 @@
           </ServiceCard>
         </div>
       </section>
-      <!-- <section>
-        <RealTimeChatWidget/>
-      </section> -->
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig()
 // Import icons from Heroicons
 import { ComputerDesktopIcon, WrenchScrewdriverIcon, CommandLineIcon } from '@heroicons/vue/24/outline'
 
@@ -37,7 +35,7 @@ const openWhatsAppChat = () => {
   const message = 'Hello, I need assistance with your services.'
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(url, '_blank')
- }
+}
 const featuredServices = ref([
   {
     title: 'IT Infrastructure',
@@ -76,4 +74,16 @@ const featuredServices = ref([
     icon: CommandLineIcon
   }
 ])
+
+useSeoMeta({
+  title: 'Raynald Tech ICT Solutions | IT Services Nelspruit',
+  description: 'Professional IT support, network installation, and hardware maintenance services in Nelspruit. 24/7 technical support and certified IT solutions.',
+  keywords: 'IT services Nelspruit, network installation, hardware maintenance, computer repair, IT consulting, cybersecurity South Africa',
+  ogTitle: 'Raynald Tech - Your Trusted IT Partner in Mpumalanga',
+  ogDescription: 'Expert IT solutions for businesses and individuals in Nelspruit and surrounding areas. Certified technicians, rapid response times.',
+  //ogImage: `${config.public.siteUrl}/images/og-home.jpg`,
+  ogUrl: `${config.public.siteUrl}`,
+  //twitterCard: 'summary_large_image',
+  robots: 'index, follow'
+})
 </script>

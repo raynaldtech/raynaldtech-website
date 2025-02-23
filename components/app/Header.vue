@@ -74,7 +74,6 @@ const navLinks = [
     { label: 'Home', path: '/', current: true },
     { label: 'Services', path: '/services' },
     { label: 'About', path: '/about' },
-    //{ label: 'Contact', path: '/contact' }
 ]
 
 // Close menu when clicking outside

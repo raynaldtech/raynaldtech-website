@@ -12,15 +12,16 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    
   ],
   runtimeConfig: {
+    mailService: process.env.MAIL_SERVICE,
     mailHost: process.env.MAIL_HOST,
     mailPort: process.env.MAIL_PORT,
     mailUser: process.env.MAIL_USER,
     mailPassword: process.env.MAIL_PASSWORD,
     contactEmail: process.env.CONTACT_EMAIL,
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
-
     public: {
       siteUrl: process.env.SITE_URL,
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY
@@ -50,23 +51,13 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         // OpenGraph/Twitter meta tags
       ],
-    }
+    },
   },
   site: {
     url: process.env.SITE_URL || 'https://raynald-tech.com',
     name: 'Raynald Tech'
   },
   sitemap: {
-
-    //siteUrl: process.env.SITE_URL || 'https://raynald-tech.com',
-    // routes: [
-    //   '/',
-    //   '/services',
-    //   '/about',
-    //   '/contact',
-    //   '/privacy'
-    // ],
-    
     autoLastmod: true,
     autoI18n: false
   },
@@ -120,30 +111,4 @@ export default defineNuxtConfig({
       defaultLanguage: 'en-ZA', // South African English
     })   
   },
-
-  //image: {
-  // static: true,
-  // provider: "ipx", //ipx
-  // dir: 'public',
-  // presets: {
-  //   logo: {
-  //     //provider: 'public',
-  //     modifiers: {
-  //       format: 'webp',
-  //       quality: 85,
-  //       fit: 'contain'
-  //     }
-  //   },
-  //   team: {
-  //     //provider: 'public',
-  //     modifiers: {
-  //       format: 'webp',
-  //       quality: 80,
-  //       fit: 'cover',
-  //       width: 400,
-  //       height: 400
-  //     }
-  //   }
-  // }
-  //}
 })

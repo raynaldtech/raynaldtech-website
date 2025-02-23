@@ -71,6 +71,8 @@
             </li>
           </ul>
         </div>
+
+        <!-- Demo Section -->
         <div class="relative aspect-video bg-neutral-100 dark:bg-neutral-800 rounded-xl overflow-hidden">
           <div class="absolute inset-0 flex items-center justify-center">
             <div
@@ -80,12 +82,13 @@
             <div class="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-lg">
               <h3 class="text-lg font-heading mb-2">Try Our Demo</h3>
               <p class="text-sm mb-4">Experience our accessibility tools</p>
-              <button class="btn-primary" aria-label="Open accessibility demo">
+              <button class="btn-primary" aria-label="Open accessibility demo" @click="isDemoOpen = true">
                 Launch Interactive Demo
               </button>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -116,10 +119,18 @@
       </div>
     </section>
   </main>
+   <!-- Add the demo modal -->
+   <AccessibilityDemoModal 
+    :is-open="isDemoOpen" 
+    @close="isDemoOpen = false"
+  />
 </template>
 
 <script setup lang="ts">
+// import AccessibilityDemoModal from '~/components/AccessibilityDemoModal.vue'
 import { CheckCircleIcon, AdjustmentsHorizontalIcon, EyeIcon, HandRaisedIcon } from '@heroicons/vue/24/outline'
+const isDemoOpen = ref(false)
+const config = useRuntimeConfig()
 
 const principles = [
   {
@@ -162,6 +173,18 @@ const features = [
   "Color Contrast Adjuster",
   "Text-to-Speech Functionality"
 ]
+
+
+useSeoMeta({
+  title: 'Accessibility Statement | Raynald Tech Inclusive Technology',
+  description: 'Our commitment to WCAG 2.1 AA compliance. Learn about our accessible IT solutions and website features.',
+  keywords: 'website accessibility, WCAG compliance, inclusive technology, ADA compliant IT services',
+  ogTitle: 'Accessible Technology Solutions - Raynald Tech',
+  ogDescription: 'Striving for digital inclusion through compliant web design and services',
+  //ogImage: `${config.public.siteUrl}/images/og-accessibility.jpg`,
+  ogUrl: `${config.public.siteUrl}/accessibility`,
+  robots: 'accessibility, follow'
+})
 </script>
 
 <style>
