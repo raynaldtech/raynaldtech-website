@@ -47,7 +47,7 @@ export default defineEventHandler(async (event) => {
 
     // Send email
     await transporter.sendMail({
-      from: `"Raynald Tech Contact" <${config.mailUser}>`,
+      from: `"Service Request User" <${body.email}>`,
       to: config.contactEmail,
       subject: `New Contact Request: ${sanitized.service}`,
       text: `

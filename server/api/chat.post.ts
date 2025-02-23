@@ -1,5 +1,5 @@
 // server/api/chat.post.ts
-import * as sanitizeHtml from 'sanitize-html'
+import sanitizeHtml from 'sanitize-html'
 import { verifyRecaptcha } from './utils/recaptcha'
  
 export default defineEventHandler(async (event) => {
