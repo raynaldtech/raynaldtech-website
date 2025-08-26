@@ -50,7 +50,7 @@
               <MapPinIcon class="w-5 h-5 flex-shrink-0" />
               <div>
                 <p class="font-bold text-2xl">Headquarters:</p>
-                <p class="font-semibold">No 9 Bouten Stress<br>Sonhuewele, Nelspruit 1200<br>
+                <p class="font-semibold">No 9 Bouten Street<br>Sonhuewele, Nelspruit 1200<br>
                   South Africa</p>
               </div>
             </div>

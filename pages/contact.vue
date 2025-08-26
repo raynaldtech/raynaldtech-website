@@ -113,7 +113,7 @@
                   <MapPinIcon class="w-6 h-6 flex-shrink-0 text-primary" />
                   <div>
                     <p class="font-bold">Headquarters:</p>
-                    <p>No 9 Bouten Stress<br>Sonhuewele, Nelspruit 1200<br>South Africa</p>
+                    <p>No 9 Bouten Street<br>Sonhuewele, Nelspruit 1200<br>South Africa</p>
                   </div>
                 </div>
               </div>
