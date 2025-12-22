@@ -1,3 +1,5 @@
+// app/server/api/utils/recaptcha.ts
+
 import { useRuntimeConfig } from '#imports'
 import { RecaptchaResponse } from '@raynaldtech/recaptcha'
 

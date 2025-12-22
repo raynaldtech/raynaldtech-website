@@ -1,4 +1,4 @@
-// types/recaptcha.d.ts
+// app/types/recaptcha.d.ts
 declare module '@raynaldtech/recaptcha' {
     interface RecaptchaResponse {
         success: boolean

@@ -137,7 +137,7 @@
   </ClientOnly>
 </template>
 
-<script setup lang="ts">
+<script setup lang="s">
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/vue/24/outline'
 import { useToast } from '~/composables/useToast'
 
