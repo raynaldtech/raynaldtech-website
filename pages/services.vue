@@ -28,7 +28,7 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 items-start">
+        <div class="grid md:grid-cols-3 gap-8">
           <PricingTier v-for="(tier, index) in pricingTiers" :key="index" :name="tier.name" :price="tier.price"
             :price-suffix="tier.priceSuffix" :tagline="tier.tagline" :features="tier.features"
             :featured="tier.featured" />
