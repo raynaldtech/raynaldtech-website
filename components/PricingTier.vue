@@ -23,6 +23,7 @@
     </ul>
 
     <NuxtLink :to="{ path: '/contact', query: { service: name } }"
+      :aria-label="`Get started with the ${name}`"
       class="block text-center bg-secondary hover:bg-red-800 dark:hover:bg-red-900 dark:bg-red-800 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-300">
       Get Started
     </NuxtLink>
