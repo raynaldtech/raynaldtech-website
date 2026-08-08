@@ -62,7 +62,7 @@ export default defineNuxtConfig({
     autoI18n: false
   },
   robots: {
-    allow: ['/', '/about', 'services','/contact'],
+    allow: ['/', '/about', 'services', '/contact', '/weddings'],
     //disallow: ['/admin'],
   },
   schemaOrg: {
