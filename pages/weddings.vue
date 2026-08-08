@@ -12,7 +12,8 @@
           </p>
           <div class="flex flex-wrap justify-center gap-4">
             <a href="/documents/raynald-tech-wedding-catalogue.pdf" download
-              class="btn-secondary" aria-label="Download our wedding catalogue PDF">
+              class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 hover:border-white/80 transition-all duration-300 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-900"
+              aria-label="Download our wedding catalogue PDF">
               Download Our Wedding Catalogue (PDF)
             </a>
             <NuxtLink :to="{ path: '/contact', query: { service: 'Wedding Stationery & Décor' } }"
