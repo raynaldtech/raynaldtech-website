@@ -161,7 +161,8 @@ const services = ref([
   'Security Audit',
   'Starter Package',
   'Business Package',
-  'Premium Package'
+  'Premium Package',
+  'Branding & Print'
 ])
 
 const form = reactive({
