@@ -43,7 +43,8 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard v-for="(service, index) in allServices" :key="index" :title="service.title"
-          :category="service.category" :description="service.description" :specifications="service.specifications">
+          :category="service.category" :description="service.description" :specifications="service.specifications"
+          :quote-service="service.quoteService">
           <template #icon>
             <component :is="service.icon" class="w-8 h-8 text-primary" />
             <span class="text-2xl">{{ service.emoji }}</span>
@@ -200,7 +201,8 @@ const allServices = ref([
       'Professional embroidery',
       'Contisuit & workwear printing'
     ],
-    icon: TagIcon
+    icon: TagIcon,
+    quoteService: 'Branding & Print'
   },
   {
     title: 'Signage & Print Media',
@@ -215,7 +217,8 @@ const allServices = ref([
       'Flyers',
       'Product labeling'
     ],
-    icon: PrinterIcon
+    icon: PrinterIcon,
+    quoteService: 'Branding & Print'
   }
 ])
 

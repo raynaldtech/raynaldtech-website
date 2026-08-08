@@ -23,6 +23,12 @@
         <span class="text-primary-600 ">•</span>
         <span class="text-neutral-700 dark:text-neutral-300">{{ spec }}</span>
       </div>
+
+      <NuxtLink v-if="quoteService" :to="{ path: '/contact', query: { service: quoteService } }"
+        :aria-label="`Get a quote for ${quoteService}`"
+        class="inline-block bg-secondary hover:bg-red-800 dark:hover:bg-red-900 dark:bg-red-800 text-white px-4 py-2 text-sm rounded-lg font-medium transition-colors duration-300">
+        Get a Quote
+      </NuxtLink>
     </div>
   </article>
 </template>
@@ -32,7 +38,8 @@ const props = defineProps({
   title: String,
   category: String,
   description: String,
-  specifications: Array
+  specifications: Array,
+  quoteService: { type: String, default: '' }
 })
 
 const isExpanded = ref(false)
