@@ -35,7 +35,13 @@
         </div>
       </section>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
+      <div class="text-center max-w-2xl mx-auto mb-12 pt-16">
+        <h2 class="text-3xl font-heading text-primary dark:text-primary-300 mb-4">
+          All Our Services
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ServiceCard v-for="(service, index) in allServices" :key="index" :title="service.title"
           :category="service.category" :description="service.description" :specifications="service.specifications">
           <template #icon>
