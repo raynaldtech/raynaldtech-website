@@ -22,3 +22,6 @@ logs
 .env
 .env.*
 !.env.example
+
+# Source marketing assets (not part of the build)
+temp/
