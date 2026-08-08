@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig()
-import { ComputerDesktopIcon, WrenchScrewdriverIcon, CommandLineIcon, DevicePhoneMobileIcon, PaintBrushIcon, CloudIcon, DocumentTextIcon } from '@heroicons/vue/24/outline'
+import { ComputerDesktopIcon, WrenchScrewdriverIcon, CommandLineIcon, DevicePhoneMobileIcon, PaintBrushIcon, CloudIcon, DocumentTextIcon, TagIcon, PrinterIcon } from '@heroicons/vue/24/outline'
 
 const pricingTiers = ref([
   {
@@ -182,6 +182,34 @@ const allServices = ref([
       'Technical support'
     ],
     icon: CommandLineIcon
+  },
+  {
+    title: 'Printed Apparel & Promotional Items',
+    category: 'Branding & Print Solutions',
+    description: 'Custom branded apparel and promotional items for events, teams and businesses',
+    specifications: [
+      'Custom branded gazebos',
+      'T-shirt printing',
+      'Sublimation printing (mugs, cups, plates & more)',
+      'Professional embroidery',
+      'Contisuit & workwear printing'
+    ],
+    icon: TagIcon
+  },
+  {
+    title: 'Signage & Print Media',
+    category: 'Branding & Print Solutions',
+    description: 'Eye-catching signage and print media that build your brand identity',
+    specifications: [
+      'Outdoor & indoor signage',
+      'Pull-up banners',
+      'X-banners',
+      'Chromadec boards',
+      'Business cards',
+      'Flyers',
+      'Product labeling'
+    ],
+    icon: PrinterIcon
   }
 ])
 
