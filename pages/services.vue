@@ -149,8 +149,10 @@ const allServices = ref([
     category: 'Hardware Services',
     description: 'Expert repair services for all your electronic devices',
     specifications: [
-      'Cellphone repairs',
+      'Cellphone repairs (screens, batteries, charging ports)',
+      'Laptop repair (hardware & software)',
       'Computer hardware repair',
+      'Printer repair & maintenance',
       'Component replacement',
       'Diagnostic testing'
     ],
@@ -161,7 +163,8 @@ const allServices = ref([
     category: 'Enterprise Solutions',
     description: 'Complete technology infrastructure design and implementation',
     specifications: [
-      'Computer network installation',
+      'Computer network installation (LAN, Wi-Fi, structured cabling)',
+      'CCTV camera supply, installation & maintenance',
       'Network architecture design',
       'Cloud integration',
       'Security protocols'
