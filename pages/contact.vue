@@ -143,6 +143,7 @@ import { useToast } from '~/composables/useToast'
 
 const { showToast, toast } = useToast()
 const config = useRuntimeConfig()
+const route = useRoute()
 const recaptchaSiteKey = await config.public.recaptchaSiteKey
 
 declare global {
@@ -157,7 +158,10 @@ const services = ref([
   'Software Support',
   'Device Repair',
   'IT Consulting',
-  'Security Audit'
+  'Security Audit',
+  'Starter Package',
+  'Business Package',
+  'Premium Package'
 ])
 
 const form = reactive({
@@ -173,6 +177,11 @@ onMounted(() => {
   const script = document.createElement('script')
   script.src = `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`
   document.head.appendChild(script)
+
+  const requestedService = route.query.service
+  if (typeof requestedService === 'string' && services.value.includes(requestedService)) {
+    form.service = requestedService
+  }
 })
 
 
