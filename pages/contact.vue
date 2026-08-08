@@ -162,7 +162,8 @@ const services = ref([
   'Starter Package',
   'Business Package',
   'Premium Package',
-  'Branding & Print'
+  'Branding & Print',
+  'Wedding Stationery & Décor'
 ])
 
 const form = reactive({
