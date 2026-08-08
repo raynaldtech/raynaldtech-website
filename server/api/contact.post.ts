@@ -35,6 +35,10 @@ export default defineEventHandler(async (event) => {
       message: sanitizeHtml(body.message)
     }
 
+    // Plain-text contexts (subject, text body) must not be HTML-entity-escaped,
+    // but still need protection against email header/content injection.
+    const serviceForHeader = String(body.service).replace(/[\r\n]/g, '')
+
     // Create Nodemailer transporter
     const transporter = createTransport({
       service: config.mailService,
@@ -51,11 +55,11 @@ export default defineEventHandler(async (event) => {
     await transporter.sendMail({
       from: `"Service Request User" <${body.email}>`,
       to: config.contactEmail,
-      subject: `New Contact Request: ${sanitized.service}`,
+      subject: `New Contact Request: ${serviceForHeader}`,
       text: `
         Name: ${sanitized.name}
         Email: ${sanitized.email}
-        Service: ${sanitized.service}
+        Service: ${serviceForHeader}
         Message: ${sanitized.message}
       `,
       html: `
