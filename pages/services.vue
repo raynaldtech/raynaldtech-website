@@ -18,6 +18,23 @@
         </div>
       </section>
 
+      <section class="py-16">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-heading text-primary dark:text-primary-300 mb-4">
+            Monthly IT Support Packages
+          </h2>
+          <p class="text-neutral-600 dark:text-neutral-300">
+            Three packages. One goal. Your business running smoothly.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+          <PricingTier v-for="(tier, index) in pricingTiers" :key="index" :name="tier.name" :price="tier.price"
+            :price-suffix="tier.priceSuffix" :tagline="tier.tagline" :features="tier.features"
+            :featured="tier.featured" />
+        </div>
+      </section>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-16">
         <ServiceCard v-for="(service, index) in allServices" :key="index" :title="service.title"
           :category="service.category" :description="service.description" :specifications="service.specifications">
@@ -34,6 +51,61 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 import { ComputerDesktopIcon, WrenchScrewdriverIcon, CommandLineIcon, DevicePhoneMobileIcon, PaintBrushIcon, CloudIcon, DocumentTextIcon } from '@heroicons/vue/24/outline'
+
+const pricingTiers = ref([
+  {
+    name: 'Starter Package',
+    price: 'R2200',
+    priceSuffix: '/month',
+    tagline: 'Essential IT support to keep your business running without interruptions.',
+    features: [
+      'WhatsApp Support',
+      'Remote Support',
+      'Virus & Malware Removal',
+      'Printer Setup & Support',
+      'Wi-Fi Troubleshooting',
+      'CCTV Checks',
+      'Device Health Checks',
+      'Software Installs',
+      'Backup Assistance'
+    ],
+    featured: false
+  },
+  {
+    name: 'Business Package',
+    price: 'R3500',
+    priceSuffix: '/month',
+    tagline: 'More coverage, faster support and proactive care for your growing business.',
+    features: [
+      'Everything in Starter, plus:',
+      'Up to 10 Devices Covered',
+      'Priority Support',
+      '2 Onsite Visits Per Month',
+      'Enhanced Printer Support',
+      'Enhanced CCTV Support',
+      'Preventative Maintenance',
+      'Device Inventory'
+    ],
+    featured: true
+  },
+  {
+    name: 'Premium Package',
+    price: 'R5000+',
+    priceSuffix: '/month',
+    tagline: 'Complete IT care with maximum uptime, security and peace of mind.',
+    features: [
+      'Everything in Business, plus:',
+      'Unlimited Remote Support',
+      'Multiple Onsite Visits',
+      'Backup Management',
+      '24/7 Network Monitoring',
+      'Full CCTV Support',
+      'Priority Response',
+      'Proactive System Maintenance'
+    ],
+    featured: false
+  }
+])
 
 const allServices = ref([
   {
