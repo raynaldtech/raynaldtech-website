@@ -105,6 +105,7 @@ import { EnvelopeOpenIcon, PhoneIcon, MapPinIcon, ChatBubbleOvalLeftEllipsisIcon
 const footerLinks = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
+  { label: 'Weddings', path: '/weddings' },
   { label: 'Our Team', path: '/about' },
   { label: 'Contact', path: '/contact' },
   //{ label: 'Case Studies', path: '/case-studies' },
