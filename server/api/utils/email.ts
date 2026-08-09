@@ -13,6 +13,13 @@ export interface SendEmailOptions {
 export async function sendEmail(options: SendEmailOptions) {
   const config = useRuntimeConfig()
 
+  if (!config.mailerSendApiKey || !config.mailerSendFromEmail) {
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Email service is not configured'
+    })
+  }
+
   const mailerSend = new MailerSend({ apiKey: config.mailerSendApiKey })
 
   const sentFrom = new Sender(config.mailerSendFromEmail, config.mailerSendFromName)
