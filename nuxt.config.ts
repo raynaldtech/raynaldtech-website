@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     mailPort: process.env.MAIL_PORT,
     mailUser: process.env.MAIL_USER,
     mailPassword: process.env.MAIL_PASSWORD,
+    mailerSendApiKey: process.env.MAILERSEND_API_KEY,
+    mailerSendFromEmail: process.env.MAILERSEND_FROM_EMAIL,
+    mailerSendFromName: process.env.MAILERSEND_FROM_NAME,
     contactEmail: process.env.CONTACT_EMAIL,
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     public: {
