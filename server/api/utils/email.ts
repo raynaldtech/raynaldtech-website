@@ -36,5 +36,13 @@ export async function sendEmail(options: SendEmailOptions) {
     emailParams.setReplyTo(new Sender(options.replyTo.email, options.replyTo.name))
   }
 
-  return mailerSend.email.send(emailParams)
+  try {
+    return await mailerSend.email.send(emailParams)
+  } catch (error: any) {
+    console.error('MailerSend send failed:', error?.statusCode, JSON.stringify(error?.body))
+    throw createError({
+      statusCode: 502,
+      statusMessage: 'Email delivery failed'
+    })
+  }
 }
