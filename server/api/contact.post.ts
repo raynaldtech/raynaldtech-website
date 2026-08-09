@@ -38,6 +38,7 @@ export default defineEventHandler(async (event) => {
     // Plain-text contexts (subject, text body) must not be HTML-entity-escaped,
     // but still need protection against email header/content injection.
     const serviceForHeader = String(body.service).replace(/[\r\n]/g, '')
+    const nameForReplyTo = String(body.name).replace(/[\r\n]/g, '')
 
     // MailerSend validates reply_to.email format server-side and rejects the
     // ENTIRE send if it's malformed — the frontend's type="email" input only
@@ -65,7 +66,7 @@ export default defineEventHandler(async (event) => {
         <p><strong>Message:</strong></p>
         <p>${sanitized.message.replace(/\n/g, '<br>')}</p>
       `,
-      replyTo: isValidEmailFormat ? { email: body.email, name: sanitized.name } : undefined
+      replyTo: isValidEmailFormat ? { email: body.email, name: nameForReplyTo } : undefined
     })
 
     return { success: true }
