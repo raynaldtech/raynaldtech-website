@@ -39,6 +39,12 @@ export default defineEventHandler(async (event) => {
     // but still need protection against email header/content injection.
     const serviceForHeader = String(body.service).replace(/[\r\n]/g, '')
 
+    // MailerSend validates reply_to.email format server-side and rejects the
+    // ENTIRE send if it's malformed — the frontend's type="email" input only
+    // does loose HTML5 validation, so a bad address here shouldn't be able to
+    // take down the whole notification. Only attach replyTo when it looks valid.
+    const isValidEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
+
     // Send email via MailerSend. `from` must be the fixed, domain-verified
     // sender identity — MailerSend rejects sends from arbitrary addresses,
     // unlike the old Gmail SMTP relay. The visitor's email goes in replyTo
@@ -59,7 +65,7 @@ export default defineEventHandler(async (event) => {
         <p><strong>Message:</strong></p>
         <p>${sanitized.message.replace(/\n/g, '<br>')}</p>
       `,
-      replyTo: { email: body.email, name: sanitized.name }
+      replyTo: isValidEmailFormat ? { email: body.email, name: sanitized.name } : undefined
     })
 
     return { success: true }
