@@ -2,9 +2,9 @@
 
 import { RecaptchaResponse } from '@raynaldtech/recaptcha'
 import { defineEventHandler, readBody } from 'h3'
-import { createTransport } from 'nodemailer'
 import sanitizeHtml from 'sanitize-html'
 import { verifyRecaptcha } from './utils/recaptcha'
+import { sendEmail } from './utils/email'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
@@ -39,21 +39,11 @@ export default defineEventHandler(async (event) => {
     // but still need protection against email header/content injection.
     const serviceForHeader = String(body.service).replace(/[\r\n]/g, '')
 
-    // Create Nodemailer transporter
-    const transporter = createTransport({
-      service: config.mailService,
-      host: config.mailHost,
-      //port: config.mailPort,
-      secure: true,  
-      auth: {
-        user: config.mailUser,
-        pass: config.mailPassword
-      }
-    })
-
-    // Send email
-    await transporter.sendMail({
-      from: `"Service Request User" <${body.email}>`,
+    // Send email via MailerSend. `from` must be the fixed, domain-verified
+    // sender identity — MailerSend rejects sends from arbitrary addresses,
+    // unlike the old Gmail SMTP relay. The visitor's email goes in replyTo
+    // instead, so replying to the notification still reaches them.
+    await sendEmail({
       to: config.contactEmail,
       subject: `New Contact Request: ${serviceForHeader}`,
       text: `
@@ -68,7 +58,8 @@ export default defineEventHandler(async (event) => {
         <p><strong>Service:</strong> ${sanitized.service}</p>
         <p><strong>Message:</strong></p>
         <p>${sanitized.message.replace(/\n/g, '<br>')}</p>
-      `
+      `,
+      replyTo: { email: body.email, name: sanitized.name }
     })
 
     return { success: true }

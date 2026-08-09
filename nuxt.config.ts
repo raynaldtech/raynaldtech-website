@@ -15,11 +15,6 @@ export default defineNuxtConfig({
     
   ],
   runtimeConfig: {
-    mailService: process.env.MAIL_SERVICE,
-    mailHost: process.env.MAIL_HOST,
-    mailPort: process.env.MAIL_PORT,
-    mailUser: process.env.MAIL_USER,
-    mailPassword: process.env.MAIL_PASSWORD,
     mailerSendApiKey: process.env.MAILERSEND_API_KEY,
     mailerSendFromEmail: process.env.MAILERSEND_FROM_EMAIL,
     mailerSendFromName: process.env.MAILERSEND_FROM_NAME,
