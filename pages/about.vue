@@ -43,13 +43,7 @@
       bio: 'A visionary leader with expertise in IT, technical troubleshooting, web development, and graphic design. Known for delivering innovative and high-quality solutions, Gomotso ensures Raynald Tech ICT stays at the forefront of digital transformation and trusted IT services.',
       certifications: ['IT Troubleshooting', 'Web Development', 'Graphic Design', 'Device Repair Technician']
     },
-    {
-      name: 'Innocentia Faith Malatjie',
-      role: 'Co-CEO & Manager',
-      image: '/images/team/innocentia-faith-malatjie.webp',
-      bio: 'A dedicated Co-CEO and Manager with comprehensive qualifications in Human Resource Management, Project Management, Trauma Counseling, and Chaplaincy. Faith combines strong leadership and organizational capabilities with a people-centered philosophy, fostering both operational efficiency and team well-being. Her balanced expertise allows her to lead teams with professionalism, empathy, and integrity, creating stable and high-performing work environments.',
-      certifications: ['Human Resource Management', 'Project Management', 'Trauma Counseling', 'Chaplaincy']
-    },
+    // Placeholder: reserved slot for a future team member addition
     {
       name: 'Moeketsi Mokoena',
       role: 'Strategic Solutions Partner with RAYNALD TECH ',
